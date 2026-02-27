@@ -1,0 +1,156 @@
+
+      <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'>
+        <head>
+          <meta charset='utf-8'>
+          <title>Resume</title>
+          <style>
+            @page {
+              size: A4;
+              margin-top: 0.95cm;
+              margin-bottom: 0.95cm;
+              margin-left: 0.95cm;
+              margin-right: 0.95cm;
+            }
+            body {
+              font-family: 'Times New Roman', Times, serif;
+              font-size: 12pt;
+              line-height: 1.15;
+              margin: 0;
+              padding: 0;
+            }
+            h1 {
+              font-size: 16pt;
+              font-weight: bold;
+              text-transform: uppercase;
+              text-align: center;
+              margin: 0 0 3pt 0;
+              letter-spacing: 0.5pt;
+            }
+            h4 {
+              font-size: 12pt;
+              font-weight: normal;
+              text-align: center;
+              margin: 0 0 6pt 0;
+              line-height: 1.3;
+            }
+            p {
+              margin: 0 0 6pt 0;
+            }
+            p strong {
+              font-size: 12pt;
+              font-weight: bold;
+              display: block;
+              margin-top: 8pt;
+              margin-bottom: 3pt;
+              text-transform: uppercase;
+              letter-spacing: 0.3pt;
+            }
+            ul {
+              margin: 0 0 6pt 18pt;
+              padding: 0;
+              list-style-type: none;
+            }
+            li {
+              display: block;
+              margin: 0 0 4pt 0;
+              line-height: 1.25;
+            }
+            li::before {
+              content: "• ";
+              margin-left: -1em;
+            }
+          </style>
+        </head>
+        <body>
+          <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            margin: 0.95cm;
+            line-height: 1.2;
+        }
+        h1 {
+            font-size: 16pt;
+            margin-bottom: 2pt;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4pt;
+        }
+        h4 {
+            font-size: 11pt;
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 12pt;
+        }
+        p {
+            margin-top: 6pt;
+            margin-bottom: 6pt;
+        }
+        ul {
+            padding-left: 20px;
+            margin-top: 4pt;
+            margin-bottom: 8pt;
+        }
+        li {
+            margin-bottom: 3pt;
+        }
+    </style>
+</head>
+<body>
+
+<h1>SAHAR ELBOUMTIRI</h1>
+<h4>Airline Customer Service Professional | Rabat, Morocco | +212 7 78 91 59 27 | saharelboumtiri@gmail.com</h4>
+
+<p><strong>PROFESSIONAL SUMMARY</strong></p>
+<p>Dedicated Hospitality Professional with a specialized Aviation & Hospitality Diploma and 5-star luxury service experience. Proven track record in high-volume customer interactions at Casablanca International Airport and premium F&B service at the Four Seasons Hotel. Expert in creating exceptional customer experiences through proactive service, meticulous attention to detail, and trilingual fluency.</p>
+
+<p><strong>CORE COMPETENCIES & SKILLS</strong></p>
+<ul>
+<li>• <strong>Customer Service & Contact Centre:</strong> Inbound Query Resolution, Flight Reservations, Active Listening, Professional Communication.</li>
+<li>• <strong>Aviation & Hospitality Operations:</strong> Premium Service Standards, Passenger Journey Management, Fast-Paced Environments.</li>
+<li>• <strong>Languages & Communication:</strong> Fluent English (Written & Spoken), Native Arabic, Fluent French.</li>
+</ul>
+
+<p><strong>PROFESSIONAL EXPERIENCE</strong></p>
+
+<p><strong>Customer Service Agent</strong> International Airport of Casablanca | Morocco | Dec 2023 – May 2024</p>
+<ul>
+<li>• Managed premium passenger queries efficiently in a high-pressure aviation hub, ensuring smooth check-in and boarding procedures.</li>
+<li>• Resolved customer concerns with a solution-oriented approach, upholding strict brand and grooming standards.</li>
+<li>• Facilitated positive brand image for airport and airline partners through professional and timely interactions.</li>
+</ul>
+
+<p><strong>Waitress Intern (5-Star Luxury)</strong> Four Seasons Hotel | Rabat, Morocco | Jul 2025 – Oct 2025</p>
+<ul>
+<li>• Delivered world-class Food and Beverage service, strictly adhering to luxury brand standards and fine dining etiquette.</li>
+<li>• Anticipated guest needs to create personalized "Moments of Magic," consistently receiving positive feedback.</li>
+<li>• Executed flawless mise en place and service sequences to ensure a seamless premium guest experience.</li>
+</ul>
+
+<p><strong>Sales Attendant</strong> Parfois | Rabat, Morocco | Dec 2021 – May 2022</p>
+<ul>
+<li>• Enhanced customer experience through proactive assistance and detailed product knowledge.</li>
+<li>• Maintained high standards of visual merchandising and personal presentation aligned with brand expectations.</li>
+</ul>
+
+<p><strong>EDUCATION</strong></p>
+
+<p><strong>INFOHAS Hospitality and Aviation Accredited Diploma</strong> | Rabat, Morocco | Jul 2024 – Jan 2026</p>
+<p>Specialized Modules: Food & Beverage Services, 5-Star Hospitality, CRM, Aviation & Cabin Crew Training.</p>
+
+<p><strong>High School Degree</strong> | Morocco | 2023 – 2024</p>
+
+<p><strong>LANGUAGES</strong></p>
+<ul>
+<li>• Arabic: Native</li>
+<li>• English: Fluent (Written and Spoken)</li>
+<li>• French: Fluent (Written and Spoken)</li>
+</ul>
+
+</body>
+</html>
+        </body>
+      </html>
+    

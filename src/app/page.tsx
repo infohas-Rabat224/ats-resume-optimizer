@@ -1235,100 +1235,45 @@ Now optimize following ALL modules strictly. Return ONLY the JSON.
     result = result.replace(/<li>\s*•\s*([^<]+?\.)\s+([A-Z][^<]+)\s*<\/li>/gi, 
       '<li>• $1</li>\n<li>• $2</li>');
     
-    // Remove duplicate bullets
-    const bullets = result.match(/<li>•[^<]+<\/li>/gi) || [];
-    const seen = new Set<string>();
-    const uniqueBullets: string[] = [];
-    
-    bullets.forEach(bullet => {
-      const normalized = bullet.toLowerCase().replace(/\s+/g, ' ').trim();
-      if (!seen.has(normalized)) {
-        seen.add(normalized);
-        uniqueBullets.push(bullet);
-      }
-    });
-    
-    // Remove duplicate content from result
     return result;
   };
 
-  const downloadDocx = (content: string, filename: string) => {
-    // Fix combined bullets before export
-    const fixedContent = fixCombinedBulletsForExport(content);
-    
-    // 0.95cm = ~540 twips (1 inch = 1440 twips, 1 cm = 567 twips, so 0.95cm ≈ 539 twips)
-    const html = `
-      <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'>
-        <head>
-          <meta charset='utf-8'>
-          <title>Resume</title>
-          <style>
-            @page {
-              size: A4;
-              margin-top: 0.95cm;
-              margin-bottom: 0.95cm;
-              margin-left: 0.95cm;
-              margin-right: 0.95cm;
-            }
-            body {
-              font-family: 'Times New Roman', Times, serif;
-              font-size: 12pt;
-              line-height: 1.15;
-              margin: 0;
-              padding: 0;
-            }
-            h1 {
-              font-size: 16pt;
-              font-weight: bold;
-              text-transform: uppercase;
-              text-align: center;
-              margin: 0 0 3pt 0;
-              letter-spacing: 0.5pt;
-            }
-            h4 {
-              font-size: 12pt;
-              font-weight: normal;
-              text-align: center;
-              margin: 0 0 6pt 0;
-              line-height: 1.3;
-            }
-            p {
-              margin: 0 0 6pt 0;
-            }
-            p strong {
-              font-size: 12pt;
-              font-weight: bold;
-              display: block;
-              margin-top: 8pt;
-              margin-bottom: 3pt;
-              text-transform: uppercase;
-              letter-spacing: 0.3pt;
-            }
-            ul {
-              margin: 0 0 6pt 18pt;
-              padding: 0;
-              list-style-type: none;
-            }
-            li {
-              display: block;
-              margin: 0 0 4pt 0;
-              line-height: 1.25;
-            }
-            li::before {
-              content: "• ";
-              margin-left: -1em;
-            }
-          </style>
-        </head>
-        <body>
-          ${fixedContent}
-        </body>
-      </html>
-    `;
-    const link = document.createElement('a');
-    link.href = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
-    link.download = filename;
-    link.click();
+  // Download DOCX using proper docx library via API
+  const downloadDocx = async (content: string, filename: string) => {
+    try {
+      // Fix combined bullets before export
+      const fixedContent = fixCombinedBulletsForExport(content);
+      
+      // Call the API to generate proper DOCX
+      const response = await fetch('/api/export-docx', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: fixedContent, filename })
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to generate DOCX');
+      }
+      
+      // Download the file
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('DOCX download error:', error);
+      // Fallback to simple HTML download
+      const html = `<html><body style="font-family: 'Times New Roman'; font-size: 12pt;">${content}</body></html>`;
+      const link = document.createElement('a');
+      link.href = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+      link.download = filename;
+      link.click();
+    }
   };
 
   // Format cover letter with proper HTML structure
